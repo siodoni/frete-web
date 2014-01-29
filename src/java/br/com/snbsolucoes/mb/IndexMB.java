@@ -35,10 +35,10 @@ public class IndexMB implements Serializable {
         param.put("aliasUsuario", usuario);
         param.put("senha", senha);
 
-        user = (Usuario)dao.buscarNamedQuery(param,"Usuario.findByUsuarioSenha");
+        user = (Usuario)dao.buscarNamedQuery("Usuario.findByUsuarioSenha",param);
         
         if(user != null && user.getIdUsuario() != null){
-            FacesContext.getCurrentInstance().getExternalContext().redirect("/frete/faces/welcomePrimeFaces.xhtml");
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/frete/faces/welcomePrimefaces.xhtml");
         }
         
         System.out.println("AQUI !!!");
