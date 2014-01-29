@@ -2,12 +2,15 @@ package br.com.snbsolucoes.mb;
 
 import br.com.snbsolucoes.dao.DAOGenerico;
 import br.com.snbsolucoes.modelo.frete.FamiliaProduto;
+import br.com.snbsolucoes.modelo.geral.Usuario;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
 @ManagedBean(name = "index")
 @ViewScoped
@@ -21,14 +24,22 @@ public class IndexMB implements Serializable {
 
     public IndexMB() {
         lstFamiliaProduto = dao.listarNamedQuery("FamiliaProduto.findAll", null);
+        
+        
     }
 
-    public void logar(){
+    public void logar() throws IOException{
+        Usuario user;
+        
         Map<String, Object> param = new HashMap<String, Object>();
         param.put("aliasUsuario", usuario);
         param.put("senha", senha);
 
-        dao.buscarNamedQuery("Usuario.findByUsuarioSenha", param);
+        user = (Usuario)dao.buscarNamedQuery(param,"Usuario.findByUsuarioSenha");
+        
+        if(user != null && user.getIdUsuario() != null){
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/frete/faces/welcomePrimeFaces.xhtml");
+        }
         
         System.out.println("AQUI !!!");
     }
