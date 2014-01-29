@@ -20,7 +20,7 @@ public class IndexMB implements Serializable {
     private String usuario ="", senha="";
 
     public IndexMB() {
-        lstFamiliaProduto = dao.buscarNamedQuery("FamiliaProduto.findAll", null);
+        lstFamiliaProduto = dao.listarNamedQuery("FamiliaProduto.findAll", null);
     }
 
     public void logar(){
