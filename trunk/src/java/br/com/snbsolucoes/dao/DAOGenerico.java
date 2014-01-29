@@ -31,7 +31,7 @@ public class DAOGenerico implements Serializable {
         return entityManager;
     }
 
-    public List buscarNamedQuery(String namedQuery, Map parametros) {
+    public List listarNamedQuery(String namedQuery, Map parametros) {
         try {
             List lista;
 
@@ -58,7 +58,7 @@ public class DAOGenerico implements Serializable {
         }
     }
 
-    public Object buscarNamedQuery(Map parametros, String namedQuery) {
+    public Object buscarNamedQuery(String namedQuery, Map parametros) {
         try {
 
             if (em == null) {
