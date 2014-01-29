@@ -15,10 +15,12 @@
                         <p:inputText id="usuario"
                                      required="true"
                                      value="#{index.usuario}"/>
+                        <p:watermark for="usuario" value="Informe o usuario" />
                         <p:inputText id="senha"
                                      type="password"
                                      required="true"                                 
                                      value="#{index.senha}"/>
+                        <p:watermark for="senha" value="Informe a senha" />
                         <p:commandButton id="logar"
                                          action="#{index.logar()}"
                                          title="Fazer login"
