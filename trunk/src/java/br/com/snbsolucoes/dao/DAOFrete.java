@@ -4,10 +4,17 @@ import br.com.snbsolucoes.modelo.frete.OrigemDestino;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DAOFrete implements Serializable {
-    
+
     public static BigDecimal vlrICMS;
+    private final DAOGenerico dao;
+
+    public DAOFrete() {
+        dao = new DAOGenerico();
+    }
     
     public void calculaFrete(Integer empresa,
             Integer transportadora,
@@ -85,9 +92,10 @@ public class DAOFrete implements Serializable {
     
     }
     
-    public OrigemDestino ckOrigDestino(Integer idOrigDest) {        
-        //TODO Converter o metodo
-        return null;
+    public OrigemDestino ckOrigDestino(Integer idOrigDest) {
+        Map<String,Object> parametros = new HashMap<String,Object>();
+        parametros.put("idOrigDest", idOrigDest);
+        return (OrigemDestino) dao.buscarNamedQuery("OrigemDestino.findByIdOrigDest", parametros);
     }
     
     public boolean ckDtTabFreteTransp(Integer transportadora,
