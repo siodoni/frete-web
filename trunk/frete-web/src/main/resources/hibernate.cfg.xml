@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/frete?zeroDateTimeBehavior=convertToNull</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">welcome1</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+
+		<mapping class="br.com.snbsolucoes.modelo.geral.Filial" />
+		<mapping class="br.com.snbsolucoes.modelo.geral.Estado" />
+		<mapping class="br.com.snbsolucoes.modelo.geral.EmpresaProp" />
+		<mapping class="br.com.snbsolucoes.modelo.geral.Cidade" />
+		<mapping class="br.com.snbsolucoes.modelo.geral.Pais" />
+		<mapping class="br.com.snbsolucoes.modelo.geral.Transportadora" />
+		<mapping class="br.com.snbsolucoes.modelo.geral.Usuario" />
+		<mapping class="br.com.snbsolucoes.modelo.frete.Calculo" />
+		<mapping class="br.com.snbsolucoes.modelo.frete.CalculoDetalhe" />
+		<mapping class="br.com.snbsolucoes.modelo.frete.Controle" />
+		<mapping class="br.com.snbsolucoes.modelo.frete.FamiliaProduto" />
+		<mapping class="br.com.snbsolucoes.modelo.frete.OrigemDestino" />
+		<mapping class="br.com.snbsolucoes.modelo.frete.Peso" />
+		<mapping class="br.com.snbsolucoes.modelo.frete.TabelaEmpresa" />
+		<mapping class="br.com.snbsolucoes.modelo.frete.TabelaFilial" />
+		<mapping class="br.com.snbsolucoes.modelo.frete.TabelaTransportadora" />
+		<mapping class="br.com.snbsolucoes.modelo.frete.TabelaTransportadoraValorVariavel" />
+		<mapping class="br.com.snbsolucoes.modelo.frete.TabelaTransportadoraVariavel" />
+		<mapping class="br.com.snbsolucoes.modelo.frete.TipoCalculoValor" />
+		<mapping class="br.com.snbsolucoes.modelo.frete.TipoFaixa" />
+		<mapping class="br.com.snbsolucoes.modelo.frete.Variavel" />
+	</session-factory>
+</hibernate-configuration>
