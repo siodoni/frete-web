@@ -1,10 +1,5 @@
 package br.com.snbsolucoes.mb;
 
-import br.com.snbsolucoes.dao.DAOGenerico;
-import br.com.snbsolucoes.modelo.frete.FamiliaProduto;
-import br.com.snbsolucoes.modelo.geral.Usuario;
-import br.com.snbsolucoes.util.Mensagem;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.HashMap;
@@ -13,7 +8,11 @@ import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
+
+import br.com.snbsolucoes.dao.DAOGenerico;
+import br.com.snbsolucoes.modelo.frete.FamiliaProduto;
+import br.com.snbsolucoes.modelo.geral.Usuario;
+import br.com.snbsolucoes.util.Mensagem;
 
 @ManagedBean(name = "login")
 @ViewScoped
