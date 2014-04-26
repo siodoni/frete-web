@@ -20,7 +20,7 @@ import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-@Table(name = "amfrete_tab_filial", catalog = "frete", schema = "")
+@Table(name = "frete_tab_filial", catalog = "frete", schema = "")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "TabelaFilial.findAll", query = "SELECT f FROM TabelaFilial f"),

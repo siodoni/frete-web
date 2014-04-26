@@ -23,7 +23,7 @@ import javax.persistence.UniqueConstraint;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-@Table(name = "amfrete_tab_transp_valor_var", catalog = "frete", schema = "", uniqueConstraints = {
+@Table(name = "frete_tab_transp_valor_var", catalog = "frete", schema = "", uniqueConstraints = {
     @UniqueConstraint(columnNames = {"frete_tab_transp", "frete_variavel", "cidade", "fg_tp_cobranca", "vlr_faixa_inicio"})})
 @XmlRootElement
 @NamedQueries({

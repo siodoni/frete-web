@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-@Table(name = "usfilial", catalog = "frete", schema = "")
+@Table(name = "filial", catalog = "frete", schema = "")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Filial.findAll", query = "SELECT f FROM Filial f"),

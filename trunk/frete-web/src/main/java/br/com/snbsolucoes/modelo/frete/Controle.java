@@ -20,7 +20,7 @@ import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-@Table(name = "amfrete_controle", catalog = "frete", schema = "")
+@Table(name = "frete_controle", catalog = "frete", schema = "")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Controle.findAll", query = "SELECT f FROM Controle f"),
