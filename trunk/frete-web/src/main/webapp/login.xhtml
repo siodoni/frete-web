@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link href="css/freteCSS.css" media="screen" rel="stylesheet" type="text/css" />
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+    
+    	<p:growl id="msgInfo"
+    			 autoUpdate="false"
+    			 life="6000"
+    			 severity="info"
+    			 showDetail="true"/>
+    
+        <div class="divPrincipal">
+            <h:form>
+            	<p:panel header="Acesso" styleClass="pnlAcesso">
+		            <h:panelGrid columns="1" width="100%" cellspacing="0" cellpadding="0">
+		                <p:inputText id="usuario"
+		                             required="true"
+		                             value="#{login.usuario}"
+		                             styleClass="txtUsuario"/>
+		                <p:watermark for="usuario" value="Usuário" />
+		                <p:inputText id="senha"
+		                             type="password"
+		                             required="true"                                 
+		                             value="#{login.senha}"
+		                             styleClass="txtSenha" />
+		                <p:watermark for="senha" value="Senha" />
+		                <p:commandButton id="logar"
+		                                 action="#{login.logar()}"
+		                                 title="Fazer login"
+		                                 label="Fazer login"
+		                                 update=":msgInfo"
+		                                 value="Fazer login"
+		                                 styleClass="btnLogar"/>
+		            </h:panelGrid>
+		            <f:facet name="actions">
+	            		<h:commandLink styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default">
+	            			<h:outputText styleClass="ui-icon ui-icon-help" />
+	            		</h:commandLink>
+	            		<h:commandLink styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default">
+	            			<h:outputText styleClass="ui-icon ui-icon-star" />
+	            		</h:commandLink>
+	            	</f:facet>
+	            </p:panel>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+
