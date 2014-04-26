@@ -3,6 +3,7 @@ package br.com.snbsolucoes.mb;
 import br.com.snbsolucoes.dao.DAOGenerico;
 import br.com.snbsolucoes.modelo.frete.FamiliaProduto;
 import br.com.snbsolucoes.modelo.geral.Usuario;
+import br.com.snbsolucoes.util.Mensagem;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -14,9 +15,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
-@ManagedBean(name = "index")
+@ManagedBean(name = "login")
 @ViewScoped
-public class IndexMB implements Serializable {
+public class loginMB implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -27,7 +28,7 @@ public class IndexMB implements Serializable {
     private String usuario ="", senha="";
 
     @SuppressWarnings("unchecked")
-	public IndexMB() {
+	public loginMB() {
         lstFamiliaProduto = dao.listarNamedQuery("FamiliaProduto.findAll", null);
     }
 
@@ -41,7 +42,8 @@ public class IndexMB implements Serializable {
         user = (Usuario)dao.buscarNamedQuery("Usuario.findByUsuarioSenha",param);
         
         if(user != null && user.getIdUsuario() != null){
-            FacesContext.getCurrentInstance().getExternalContext().redirect("/frete/faces/welcomePrimefaces.xhtml");
+        	Mensagem.info("Logado!");
+            //FacesContext.getCurrentInstance().getExternalContext().redirect("/frete/faces/welcomePrimefaces.xhtml");
         }
         
         System.out.println("AQUI !!!");
