@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
-@Table(name = "amfrete_tab_transp", catalog = "frete", schema = "", uniqueConstraints = {
+@Table(name = "frete_tab_transp", catalog = "frete", schema = "", uniqueConstraints = {
     @UniqueConstraint(columnNames = {"transportadora", "familia_produto", "dt_inicio"})})
 @XmlRootElement
 @NamedQueries({
