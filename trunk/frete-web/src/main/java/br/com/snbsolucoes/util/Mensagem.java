@@ -52,7 +52,7 @@ public class Mensagem{
 		this.stackTrace = stackTrace;
 	}
 
-	private static String stackTraceToString(Throwable throwable){
+	public static String stackTraceToString(Throwable throwable){
 		try{
 			Writer sw = new StringWriter();
 			PrintWriter pw = new PrintWriter(sw);
